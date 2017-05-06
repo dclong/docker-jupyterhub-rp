@@ -1,15 +1,14 @@
-FROM dclong/jupyterlab-rb
+FROM dclong/jupyterlab-rb:centos
 
 # install popular R packages
-RUN apt-get update \
-    && apt-get -y --no-install-recommends install \
-        libxml2-dev \
-        libcairo2-dev \
-        libssl-dev \
-        libcurl4-openssl-dev \
-        openjdk-8-jdk r-cran-rjava \
-    && apt-get autoremove \
-    && apt-get autoclean
+RUN yum update -y \
+    && yum install -y \
+        libxml2-devel \
+        cairo2-devel \
+        openssl-devel \
+        libcurl-devel \
+        java-1.8.0-openjdk-devel \
+    && yum clean all
 
 ADD install_packages.r /install_packages.r
 RUN Rscript /install_packages.r \
