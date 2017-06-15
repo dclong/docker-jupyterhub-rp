@@ -7,6 +7,7 @@ RUN yum update -y \
         cairo2-devel \
         openssl-devel \
         libcurl-devel \
+        pandoc \
         java-1.8.0-openjdk-devel \
     && yum clean all
 
