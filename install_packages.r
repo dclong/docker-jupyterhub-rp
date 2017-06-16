@@ -5,7 +5,7 @@ pkgs = '
     RJDBC jsonlite
     data.table
     mailR httr openssl
-    ggplot2
+    ggplot2 rbokeh
     lubridate
 '
 pkgs = strsplit(pkgs, '\\s')[[1]]
